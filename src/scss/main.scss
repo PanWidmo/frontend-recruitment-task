@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
 
-:root {
-    --black: #121212;
-    --white: #FFFFFF;
-    --buttonBg: #E4C1AE;
-    --bodyFont: "Roboto", sans-serif;
-  }
+//Colors
+$black: #121212;
+$white: #FFFFFF;
+$buttonBg: #E4C1AE;
+
+//Fonts
+$bodyFont: "Roboto", sans-serif;
+
 
 * {
     box-sizing: border-box;
@@ -19,13 +21,13 @@ html {
   }
 
 body {
-    font-family: var(--bodyFont);
-    background: var(--white);
+    font-family: $bodyFont;
+    background: $white;
     display: flex;
     justify-content: center;
     font-size:1.6rem;
 
-    h1{
+    h1,h2{
         font-weight: 700;
         font-size: 4.2rem;
     }
@@ -33,8 +35,13 @@ body {
 
 main {
     max-width:1440px;
-    display: flex;
     margin-top:96px;
+    display: flex;
+    justify-content: center;
+
+    .mainPage{
+        display: flex;
+    }
 
     .rightSide {
         margin-left: 95px;
@@ -45,21 +52,20 @@ main {
             max-width: 380px;
 
             p{
-                padding-top:24px;
-                padding-bottom:32px;
-                line-height: 24px;
+                padding: 24px 0 32px;
+                line-height: 2.4rem;
             }
 
             .modalButton{
-                background-color: var(--buttonBg);
-                color:var(--white);
+                background-color: $buttonBg;
+                color: $white;
                 padding:16px 40px;
                 border-radius: 32px;
                 border:none;
                 font-weight: 700;
 
-                &:hover{
-                    outline: 1px solid black;
+                &:hover, &:focus{
+                    outline: 1px solid $black;
                 }
             }
         }
@@ -76,10 +82,10 @@ main {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba($black, 0.5);
 
     .modalContent {
-        background-color: var(--white);
+        background-color: $white;
         margin: auto;
         max-width: 920px;
         max-height: 210px;
@@ -93,12 +99,12 @@ main {
         }
 
         .closeModal {
-            color: var(--black);
+            color: $black;
             text-align: right;
             font-size: 2.4rem;
 
-            &:hover {
-                color: var(--black);
+            &:hover, &:focus {
+                color: $black;
                 cursor: pointer;
             }
         }

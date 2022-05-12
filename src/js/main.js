@@ -1,6 +1,6 @@
-var modal = document.getElementById("modal");
-var openModal = document.getElementById("modalButton");
-var closeModal = document.getElementById("closeModal");
+const modal = document.querySelector("#modal");
+const openModal = document.querySelector("#modalButton");
+const closeModal = document.querySelector("#closeModal");
 
 openModal.onclick = function () {
   modal.style.display = "block";
