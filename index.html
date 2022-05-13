@@ -13,23 +13,24 @@
         <figure class="leftSide">
             <img src="images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_c_scale,w_480.jpg" alt="sea with sun picture"/>
         </figure>
-        <section class="rightSide">
-            <section class="centerRightSide">
+        <div class="rightSide">
+            <div class="centerRightSide">
                 <h1>Lorem Ipsum</h1>
                 <p>Infinitely scalable, feature-rich and cloud-native data management and protection for modern and legacy infrastructures and SaaS platforms, managed via a single app with no hardware required.</p>
-                <button class="modalButton" id="modalButton">Button</button>
-            </section>
-        </section>
+                <button type="button" class="styledButton" id="modalButton">Button</button>
+            </div>
+        </div>
+    </section>
+    <section class="modalSection" id="modal">
+        <div class="modalContent">
+            <h3 class="closeModal" id="closeModal">&times;</h3>
+            <h2>Alert!</h2>
+            <p id="outputText"></p>
+            <button type="button" class="styledButton resetButton" id="resetClicks">Reset</button>
+        </div>
     </section>
 </main>
 
-<section class="modalSection" id="modal">
-    <section class="modalContent">
-        <h3 class="closeModal" id="closeModal">&times;</h3>
-        <h2>Alert!</h2>
-        <p>You have clicked <span> X times </span> to related button.</p>
-    </section>
-</section>
 
 <script type="text/javascript" src="dist/all.js"></script>
 </body>

@@ -6,7 +6,8 @@ $white: #FFFFFF;
 $buttonBg: #E4C1AE;
 
 //Fonts
-$bodyFont: "Roboto", sans-serif;
+$bodyFont: "Roboto",
+sans-serif;
 
 
 * {
@@ -18,28 +19,29 @@ $bodyFont: "Roboto", sans-serif;
 html {
     font-size: 62.5%;
 
-  }
+}
 
 body {
     font-family: $bodyFont;
     background: $white;
     display: flex;
     justify-content: center;
-    font-size:1.6rem;
+    font-size: 1.6rem;
 
-    h1,h2{
+    h1,
+    h2 {
         font-weight: 700;
         font-size: 4.2rem;
     }
 }
 
 main {
-    max-width:1440px;
-    margin-top:96px;
+    max-width: 1440px;
+    margin-top: 96px;
     display: flex;
     justify-content: center;
 
-    .mainPage{
+    .mainPage {
         display: flex;
     }
 
@@ -51,23 +53,26 @@ main {
         .centerRightSide {
             max-width: 380px;
 
-            p{
+            p {
                 padding: 24px 0 32px;
                 line-height: 2.4rem;
             }
 
-            .modalButton{
-                background-color: $buttonBg;
-                color: $white;
-                padding:16px 40px;
-                border-radius: 32px;
-                border:none;
-                font-weight: 700;
 
-                &:hover, &:focus{
-                    outline: 1px solid $black;
-                }
-            }
+        }
+    }
+
+    .styledButton {
+        background-color: $buttonBg;
+        color: $white;
+        padding: 16px 40px;
+        border-radius: 32px;
+        border: none;
+        font-weight: 700;
+
+        &:hover,
+        &:focus {
+            outline: 1px solid $black;
         }
     }
 }
@@ -90,12 +95,9 @@ main {
         max-width: 920px;
         max-height: 210px;
 
-        p{
+        p {
             font-size: 1.6rem;
 
-            span{
-                font-weight: bold;
-            }
         }
 
         .closeModal {
@@ -103,10 +105,15 @@ main {
             text-align: right;
             font-size: 2.4rem;
 
-            &:hover, &:focus {
+            &:hover,
+            &:focus {
                 color: $black;
                 cursor: pointer;
             }
         }
+
+        .resetButton {
+            display: none;
+        }
     }
-  }
+}
