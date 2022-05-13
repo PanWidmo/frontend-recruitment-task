@@ -4,7 +4,7 @@ const closeModal = document.querySelector("#closeModal");
 const resetClicks = document.querySelector("#resetClicks");
 const outputText = document.querySelector("#outputText");
 
-openModal.onclick = function () {
+openModal.onclick = () => {
   modal.style.display = "block";
 
   if (localStorage.hasOwnProperty("clicks")) {
@@ -19,17 +19,17 @@ openModal.onclick = function () {
   }
 };
 
-resetClicks.onclick = function () {
+resetClicks.onclick = () => {
   localStorage.clear();
   modal.style.display = "none";
   resetClicks.style.display = "none";
 };
 
-closeModal.onclick = function () {
+closeModal.onclick = () => {
   modal.style.display = "none";
 };
 
-window.onclick = function (event) {
+window.onclick = (event) => {
   if (event.target == modal) {
     modal.style.display = "none";
   }
