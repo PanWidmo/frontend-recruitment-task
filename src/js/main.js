@@ -4,6 +4,7 @@ const closeModal = document.querySelector("#closeModal");
 const resetClicks = document.querySelector("#resetClicks");
 const outputText = document.querySelector("#outputText");
 
+//count clicks and add them to local storage (>5 show reset button)
 openModal.onclick = () => {
   modal.style.display = "block";
 
@@ -19,16 +20,19 @@ openModal.onclick = () => {
   }
 };
 
+//reset clicks count and close modal
 resetClicks.onclick = () => {
   localStorage.clear();
   modal.style.display = "none";
   resetClicks.style.display = "none";
 };
 
+//close modal on click on X
 closeModal.onclick = () => {
   modal.style.display = "none";
 };
 
+//close modal when you click beyond it
 window.onclick = (event) => {
   if (event.target == modal) {
     modal.style.display = "none";
