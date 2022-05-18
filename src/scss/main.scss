@@ -91,16 +91,17 @@ main {
         background-color: $white;
         margin: auto;
         max-width: 920px;
-        max-height: 210px;
+        max-height: 225px;
         position: absolute;
         top: 0;
         left: 0;
         bottom: 0;
         right: 0;
+        padding: 46px 46px 0px 95px;
 
         p {
             font-size: 1.6rem;
-
+            margin-bottom: 5px;
         }
 
         .closeModal {
@@ -113,6 +114,10 @@ main {
                 color: $black;
                 cursor: pointer;
             }
+        }
+
+        h2 {
+            margin-bottom: 24px;
         }
 
         .resetButton {
