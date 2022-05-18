@@ -37,12 +37,18 @@ body {
 
 main {
     max-width: 1440px;
-    margin-top: 96px;
     display: flex;
     justify-content: center;
 
+
     .mainPage {
         display: flex;
+        margin-top: 96px;
+
+        @media only screen and (max-width: 992px) {
+            margin-top: 0px;
+            flex-direction: column;
+        }
     }
 
     .rightSide {
@@ -52,6 +58,10 @@ main {
 
         .centerRightSide {
             max-width: 380px;
+
+            @media only screen and (max-width: 992px) {
+                max-width: 340px;
+            }
 
             p {
                 padding: 24px 0 32px;
@@ -91,7 +101,8 @@ main {
         background-color: $white;
         margin: auto;
         max-width: 920px;
-        max-height: 225px;
+        min-height: 225px;
+        max-height: 300px;
         position: absolute;
         top: 0;
         left: 0;
