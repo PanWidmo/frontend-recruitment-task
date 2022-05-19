@@ -99,20 +99,22 @@ main {
 
     .modalContent {
         background-color: $white;
-        margin: auto;
-        max-width: 920px;
-        min-height: 225px;
-        max-height: 300px;
+        margin-top: 20px;
         position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        padding: 46px 46px 0px 95px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 46px 46px 56px 95px;
+
+        @media only screen and (max-width: 992px) {
+            top: 55%;
+            left: 80%;
+        }
+
 
         p {
             font-size: 1.6rem;
-            margin-bottom: 5px;
+            margin-bottom: 15px;
         }
 
         .closeModal {
@@ -133,6 +135,16 @@ main {
 
         .resetButton {
             display: none;
+        }
+
+        .table {
+            margin-top: 15px;
+            border-collapse: collapse;
+            text-align: center;
+
+            td {
+                border: solid $black;
+            }
         }
     }
 }
