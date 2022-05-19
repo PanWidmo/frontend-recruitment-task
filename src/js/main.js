@@ -22,8 +22,6 @@ openModal.onclick = () => {
     localStorage.clicks = 1;
     outputText.innerHTML = "You have clicked <strong>" + localStorage.clicks + " time </strong> to related button.";
   }
-
-  insertDataToTable();
 };
 
 //reset clicks count and close modal
@@ -98,4 +96,9 @@ const insertDataToTable = async () => {
     progressBar.style.display = "none";
     table.style.display = "block";
   }
+};
+
+//add table to modal
+window.onload = () => {
+  insertDataToTable();
 };
