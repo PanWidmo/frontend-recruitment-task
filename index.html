@@ -27,7 +27,11 @@
                 <h2>Alert!</h2>
                 <p id="outputText"></p>
                 <button type="button" class="styledButton resetButton" id="resetClicks">Reset</button>
-                <table>
+
+                <label for="progressBar" id="progressBarLabel" style="display:none">Downloading content...</label>
+                <progress id="progressBar" style="display:none"></progress>
+
+                <table id="table" style="display:none">
                     <thead>
                         <tr>
                             <th scope="col">imie i nazwisko</th>
@@ -37,7 +41,7 @@
                             <th scope="col">nazwa firmy</th>
                         </tr>
                     </thead>
-                    <tbody id="usersTable"></tbody>
+                    <tbody id="usersTableContent"></tbody>
                 </table>
             </div>
         </div>

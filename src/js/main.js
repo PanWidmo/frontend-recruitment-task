@@ -3,7 +3,10 @@ const openModal = document.querySelector("#modalButton");
 const closeModal = document.querySelector("#closeModal");
 const resetClicks = document.querySelector("#resetClicks");
 const outputText = document.querySelector("#outputText");
-const usersTable = document.querySelector("#usersTable");
+const table = document.querySelector("#table");
+const usersTableContent = document.querySelector("#usersTableContent");
+const progressBarLabel = document.querySelector("#progressBarLabel");
+const progressBar = document.querySelector("#progressBar");
 
 //count clicks and add them to local storage (>5 show reset button)
 openModal.onclick = () => {
@@ -61,29 +64,38 @@ const fetchData = async () => {
 
 //insert data to table
 const insertDataToTable = async () => {
-  const data = await fetchData();
+  try {
+    progressBarLabel.style.display = "block";
+    progressBar.style.display = "block";
 
-  data.forEach((user) => {
-    let tableRow = document.createElement("tr");
+    const data = await fetchData();
 
-    let cellImieINazwisko = document.createElement("td");
-    let cellEmail = document.createElement("td");
-    let cellAdres = document.createElement("td");
-    let cellTelefon = document.createElement("td");
-    let cellNazwaFirmy = document.createElement("td");
+    data.forEach((user) => {
+      let tableRow = document.createElement("tr");
 
-    cellImieINazwisko.innerHTML = user.name;
-    cellEmail.innerHTML = user.email;
-    cellAdres.innerHTML = user.address.city + ", " + user.address.street + ", " + user.address.suite;
-    cellTelefon.innerHTML = user.phone;
-    cellNazwaFirmy.innerHTML = user.company.name;
+      let cellImieINazwisko = document.createElement("td");
+      let cellEmail = document.createElement("td");
+      let cellAdres = document.createElement("td");
+      let cellTelefon = document.createElement("td");
+      let cellNazwaFirmy = document.createElement("td");
 
-    tableRow.appendChild(cellImieINazwisko);
-    tableRow.appendChild(cellEmail);
-    tableRow.appendChild(cellAdres);
-    tableRow.appendChild(cellTelefon);
-    tableRow.appendChild(cellNazwaFirmy);
+      cellImieINazwisko.innerHTML = user.name;
+      cellEmail.innerHTML = user.email;
+      cellAdres.innerHTML = user.address.city + ", " + user.address.street + ", " + user.address.suite;
+      cellTelefon.innerHTML = user.phone;
+      cellNazwaFirmy.innerHTML = user.company.name;
 
-    usersTable.appendChild(tableRow);
-  });
+      tableRow.appendChild(cellImieINazwisko);
+      tableRow.appendChild(cellEmail);
+      tableRow.appendChild(cellAdres);
+      tableRow.appendChild(cellTelefon);
+      tableRow.appendChild(cellNazwaFirmy);
+
+      usersTableContent.appendChild(tableRow);
+    });
+  } finally {
+    progressBarLabel.style.display = "none";
+    progressBar.style.display = "none";
+    table.style.display = "block";
+  }
 };
